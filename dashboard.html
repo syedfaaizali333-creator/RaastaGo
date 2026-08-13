@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Dashboard — RAASTAGO</title>
+  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body data-page="dashboard">
+  <div id="site-header"></div>
+  
+<div class="container" style="padding-top:48px">
+  <header style="display:flex;justify-content:space-between;align-items:center;gap:15px"><div><p class="eyebrow">Dashboard</p><h1 style="font-size:42px;margin-top:7px">Welcome to your dashboard</h1><p style="color:var(--muted);font-size:13px">Demo profile · Pakistan</p></div><a class="btn btn-danger" href="report.html">Report Problem</a></header>
+  <section style="margin-top:30px"><h2>Traffic dashboard</h2><div class="dashboard-stats"><div class="stat-card"><small>Active Traffic Reports</small><strong>128</strong></div><div class="stat-card"><small>Road Incidents</small><strong>24</strong></div><div class="stat-card"><small>Clear Roads</small><strong>67%</strong><div class="progress"><span style="width:67%"></span></div></div><div class="stat-card"><small>Average Delay</small><strong>18 min</strong></div><div class="stat-card"><small>Resolved Today</small><strong>43</strong></div></div><div class="dashboard-map-wrap" style="margin-top:22px"><div id="dashboard-map" class="map" style="height:420px"></div><div class="traffic-legend"><span class="traffic-badge clear"><i></i>Clear</span><span class="traffic-badge moderate"><i></i>Moderate</span><span class="traffic-badge heavy"><i></i>Heavy</span><span class="traffic-badge closed"><i></i>Closed</span></div></div></section>
+  <div class="dashboard-layout">
+    <div><section><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><h2>My Reports</h2><span class="status active">👍 24 Helpful Reports</span></div><div id="my-reports" class="report-grid" style="grid-template-columns:repeat(2,1fr)"></div></section>
+      <section style="margin-top:36px"><h2>Saved Routes</h2><ul id="saved-routes" class="saved-grid" style="list-style:none;padding:0"></ul></section>
+    </div>
+    <aside><div class="card"><h3>Recent Searches</h3><ul id="recent-searches" class="recent-list"></ul></div><div class="card" style="margin-top:18px"><h3>Notifications</h3><ul id="notifications" class="notification-list"></ul></div></aside>
+  </div>
+</div>
+
+  <div id="site-footer"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAASTAGO — See the Road Ahead</title>
+  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
+  <!-- <link rel="icon" href="assets/favicon.ico"> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+  <div id="home"></div>
+<section class="hero"><div class="container hero-grid">
+  <div>
+    <span class="pill"><i></i> Built for Pakistani cities</span>
+    <h1>See the Road Ahead.</h1>
+    <p class="hero-copy">Check traffic conditions, discover better routes, and stay informed about road problems before you travel.</p>
+    <form class="route-search" data-route-form>
+      <div class="fields">
+        <div class="field"><label>From</label><div class="input-wrap"><span class="input-icon">⌖</span><input class="input" name="from" placeholder="Enter starting location"></div></div>
+        <div class="field"><label>To</label><div class="input-wrap"><span class="input-icon">➤</span><input class="input" name="to" placeholder="Enter destination"></div></div>
+      </div>
+      <p class="form-error" aria-live="polite"></p>
+      <div class="form-actions"><button class="btn btn-primary btn-lg" type="submit">⌕ Find Best Route</button><a class="btn btn-outline btn-lg" href="live-traffic.html">Explore Live Traffic</a></div>
+    </form>
+    <div id="home-stats" class="hero-stats"></div>
+  </div>
+  <div><div id="home-map" class="map" style="height:440px"></div><div class="traffic-legend"><span class="traffic-badge clear"><i></i>Clear</span><span class="traffic-badge moderate"><i></i>Moderate</span><span class="traffic-badge heavy"><i></i>Heavy</span><span class="traffic-badge closed"><i></i>Closed</span></div></div>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head"><p class="eyebrow">The problem</p><h2>Traffic Shouldn't Decide Your Day.</h2></div>
+  <div class="cards-3">
+    <article class="card"><div class="icon-box">🚗</div><h3>Heavy Traffic</h3><p>Unexpected congestion wastes valuable time.</p></article>
+    <article class="card"><div class="icon-box">🚧</div><h3>Road Problems</h3><p>Accidents, construction, potholes, and flooding can make routes difficult.</p></article>
+    <article class="card"><div class="icon-box">❓</div><h3>Poor Information</h3><p>Drivers may not know about problems ahead.</p></article>
+  </div>
+  <div class="solution"><div><h3>RAASTAGO gives you the information before you travel.</h3><p>Know the road before you take it — traffic levels, community reports and a clearly recommended route.</p></div><a class="btn btn-primary btn-lg" href="find-route.html">Find My Best Route →</a></div>
+</div></section>
+
+<section class="section alt"><div class="container">
+  <div class="section-head"><p class="eyebrow">How RAASTAGO works</p><h2>Four steps to a better journey.</h2></div>
+  <ol class="steps">
+    <li class="step"><span class="num">01</span><div class="step-icon">⌖</div><h3>Enter Your Destination</h3><p>Enter where you want to go.</p></li>
+    <li class="step"><span class="num">02</span><div class="step-icon">◉</div><h3>Check Traffic</h3><p>View traffic conditions and road reports.</p></li>
+    <li class="step"><span class="num">03</span><div class="step-icon">⌕</div><h3>Compare Routes</h3><p>Compare estimated time, distance, and traffic.</p></li>
+    <li class="step"><span class="num">04</span><div class="step-icon">➤</div><h3>Choose Your Better Route</h3><p>Select the recommended route and continue your journey.</p></li>
+  </ol>
+</div></section>
+
+<section class="section"><div class="container snapshot">
+  <div><p class="eyebrow">Karachi snapshot</p><h2>Roads people are asking about.</h2><p style="color:var(--muted);font-size:14px">Demonstration data. Connect a live traffic source to replace these values.</p><a class="btn btn-primary" href="live-traffic.html">Open Live Traffic →</a></div>
+  <ul id="corridor-list" class="corridors"></ul>
+</div></section>
+
+<section class="container cta-grid"><div class="cards-2">
+  <article class="card danger"><div class="icon-box">👥</div><h2>See a problem? Report it.</h2><p>One report can save hundreds of commuters from a blocked or flooded road.</p><a class="btn btn-danger" style="margin-top:18px" href="report.html">Report Problem</a></article>
+  <article class="card safe"><div class="icon-box">✓</div><h2>Travel safer, every trip.</h2><p>Practical safety guidance for motorcyclists, drivers, rain, fog and construction zones.</p><a class="btn btn-outline" style="margin-top:18px" href="safety-guide.html">Read Safety Guide</a></article>
+</div></section>
+
+  <div id="site-footer"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

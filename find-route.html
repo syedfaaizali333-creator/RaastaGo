@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>See the Road Ahead — RAASTAGO</title>
+  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
+  <!-- <link rel="icon" href="assets/favicon.ico"> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body data-page="find-route">
+  <div id="site-header"></div>
+  
+<div class="container">
+  <header class="page-head"><p class="eyebrow">Route planner</p><h1>See the Road Ahead</h1><p>Tell RAASTAGO where you are starting and where you are heading. We compare travel time, distance and reported road conditions.</p></header>
+  <form id="find-route-form" class="form-card surface-card" novalidate>
+    <div class="fields">
+      <div class="field location-wrap"><label>Starting Point</label><div class="input-wrap"><span class="input-icon">⌖</span><input class="input" name="from" placeholder="Enter starting location"></div><button class="btn btn-ghost btn-sm" type="button" data-use-location style="margin-top:6px">➤ Use My Location</button></div>
+      <div class="field"><label>Destination</label><div class="input-wrap"><span class="input-icon">➤</span><input class="input" name="to" placeholder="Enter destination"></div></div>
+    </div>
+    <p class="form-error"></p>
+    <fieldset style="border:0;padding:0;margin-top:22px"><legend style="font-weight:800;font-size:14px">Preferences</legend><div class="preferences">
+      <label class="check"><input type="checkbox"> Avoid toll roads</label><label class="check"><input type="checkbox"> Avoid highways</label><label class="check"><input type="checkbox" checked> Prefer fastest route</label><label class="check"><input type="checkbox"> Prefer shorter distance</label>
+    </div></fieldset>
+    <button class="btn btn-primary btn-lg" type="submit" style="margin-top:20px">⌕ Compare Routes</button>
+  </form>
+  <section style="margin-top:34px"><h2>Route preview</h2><p style="color:var(--muted);font-size:14px">Interactive demonstration map. Ready for Google Maps Platform integration.</p><div id="find-map" class="map" style="height:520px;margin-top:15px"></div><div class="traffic-legend"><span class="traffic-badge clear"><i></i>Clear</span><span class="traffic-badge moderate"><i></i>Moderate</span><span class="traffic-badge heavy"><i></i>Heavy</span><span class="traffic-badge closed"><i></i>Closed</span></div></section>
+</div>
+
+  <div id="site-footer"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About RAASTAGO — Complete Road Information for Pakistan</title>
+  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
+   <!-- <link rel="icon" href="assets/favicon.ico"> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body data-page="about">
+  <div id="site-header"></div>
+  
+<div class="container">
+  <header class="page-head"><p class="eyebrow">About RAASTAGO</p><h1>RAASTAGO is built around one simple goal. We help you reach it better.</h1><p>People travelling in Pakistani cities often do not know what is happening on their route before starting their journey. RAASTAGO brings traffic conditions, road incidents and community reports together so one question has a clear answer: which route should I take right now?</p></header>
+  <section class="about-grid">
+    <article class="card"><div class="icon-box">↗</div><h3>Better route decisions</h3><p>Compare travel time, distance and traffic level, with one clearly recommended route.</p></article>
+    <article class="card"><div class="icon-box">👥</div><h3>Community powered</h3><p>Commuters report accidents, flooding, potholes and closures, and confirm each other's reports.</p></article>
+    <article class="card"><div class="icon-box">✓</div><h3>Safety first</h3><p>Guidance for motorcyclists, drivers, rain, fog and construction zones.</p></article>
+  </section>
+  <section class="two-col" style="margin-top:45px">
+    <div><h2>The journey RAASTAGO supports</h2><ol class="journey"><li><span>1</span>Starting point</li><li><span>2</span>Traffic information</li><li><span>3</span>Better route</li><li><span>4</span>Safer journey</li><li><span>5</span>RAASTAGO</li></ol></div>
+    <div><h2>How the website is structured</h2><p style="color:var(--muted);font-size:14px">RAASTAGO owns its own data — user accounts, road reports, saved routes and community confirmations. The website uses a mapping layer for roads and locations. Community reports and route-demo data are maintained by RAASTAGO.</p><pre class="architecture">RAASTAGO Website
+       ↓
+Interactive Map Layer
+       ↓
+Community Reports + Route Data
+       ↓
+Future Live Traffic / Directions APIs</pre><p style="color:var(--muted);font-size:13px">The current build uses clearly labelled demonstration data. A live mapping key should be configured securely through an environment variable when integration is enabled.</p></div>
+  </section>
+  <section style="margin-top:45px"><h2>Cities in the current dataset</h2><div class="city-pills"><span class="city-pill">● Karachi</span><span class="city-pill">● Lahore</span><span class="city-pill">● Islamabad</span><span class="city-pill">● Rawalpindi</span><span class="city-pill">● Faisalabad</span><span class="city-pill">● Multan</span><span class="city-pill">● Peshawar</span><span class="city-pill">● Hyderabad</span><span class="city-pill">● Quetta</span></div></section>
+  <section style="margin-top:45px"><div class="section-head"><p class="eyebrow">Map coverage</p><h2>Explore the road network.</h2><p style="color:var(--muted);font-size:14px">The prototype uses an interactive OpenStreetMap layer with demonstration traffic markers. Live traffic can be connected later.</p></div><div id="about-map" class="map" style="height:420px"></div><div class="traffic-legend"><span class="traffic-badge clear"><i></i>Clear</span><span class="traffic-badge moderate"><i></i>Moderate</span><span class="traffic-badge heavy"><i></i>Heavy</span><span class="traffic-badge closed"><i></i>Closed</span></div></section>
+  <section class="solution" style="margin-top:45px"><div><h3>Know the road before you take it.</h3><p>Start with your next trip and see the difference a better route makes.</p></div><a class="btn btn-primary btn-lg" href="find-route.html">Find My Best Route</a></section>
+</div>
+
+  <div id="site-footer"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

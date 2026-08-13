@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route Results — RAASTAGO</title>
+  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
+  <!-- <link rel="icon" href="assets/favicon.ico"> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body data-page="route-results">
+  <div id="site-header"></div>
+  
+<div class="container">
+  <header class="page-head"><p class="eyebrow">Route results</p><h1>Your route options</h1><p id="route-query" class="route-query"></p></header>
+  <div id="route-empty" class="empty-state" hidden><h2>We couldn't find a suitable route.</h2><p style="color:var(--muted)">Enter a starting point and a destination to compare your options.</p><a class="btn btn-primary" href="find-route.html">Find a Route</a></div>
+  <div id="route-loading" class="loading" hidden><div class="spinner">◌</div><h3>Finding your better route...</h3><p>Checking traffic levels and active reports.</p></div>
+  <div id="route-content" class="route-layout" hidden>
+    <div><div id="route-cards" class="route-cards"></div><p style="color:var(--muted);font-size:13px;margin-top:12px">The recommended route is highlighted as <b>Best Choice</b>.</p></div>
+    <aside class="sticky"><div id="results-map" class="map" style="height:460px"></div><div class="traffic-legend"><span class="traffic-badge clear"><i></i>Clear</span><span class="traffic-badge moderate"><i></i>Moderate</span><span class="traffic-badge heavy"><i></i>Heavy</span><span class="traffic-badge closed"><i></i>Closed</span></div><div class="card" style="margin-top:14px"><h3>Reported along these routes</h3><ul style="color:var(--muted);font-size:13px;line-height:2"><li>🚧 Construction on Main University Road · +12 min</li><li>💧 Flooded section on Korangi Road · Active</li><li>🚦 Signal problem near Kalma Chowk · +9 min</li></ul><a class="btn btn-ghost" href="reports.html">See community reports</a></div></aside>
+  </div>
+</div>
+
+  <div id="site-footer"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

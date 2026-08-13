@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login or Register — RAASTAGO</title>
+  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
+  <!-- <link rel="icon" href="assets/favicon.ico"> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body data-page="login">
+  <div id="site-header"></div>
+  
+<div class="container auth-layout">
+  <section class="auth-copy"><div class="brand"><span class="brand-mark"><span class="road-line"></span><span class="road-line road-line-2"></span><span class="brand-dot"></span></span><span><strong>RAASTAGO</strong><small>COMPLETE ROAD INFORMATION</small></span></div><h1>Save your routes.<br>Help your city move.</h1><p>A RAASTAGO account keeps your frequent routes one click away, tracks your reports and tells you when conditions change on the roads you use.</p><ul><li>Saved routes and recent searches</li><li>Your report history and confirmations</li><li>Alerts when a saved route slows down</li></ul></section>
+  <section class="auth-card surface-card">
+    <div class="auth-tabs"><button class="auth-tab selected" data-auth-mode="login">Login</button><button class="auth-tab" data-auth-mode="register">Register</button></div>
+    <h2 id="auth-heading" style="margin-top:22px">Welcome back</h2><p style="color:var(--muted);font-size:12px">Demonstration interface — no account is actually created.</p>
+    <form id="auth-form" class="auth-form"><input id="auth-mode" type="hidden" value="login"><div id="name-wrap" hidden class="field"><label>Name</label><input class="input" name="name" placeholder="Your full name"></div><div class="field"><label>Email</label><input class="input" name="email" type="email" placeholder="you@example.com"></div><div class="field"><label>Password</label><input class="input" name="password" type="password" placeholder="At least 8 characters"></div><div id="city-wrap" hidden class="field"><label>City</label><select class="select" name="city"></select></div><p class="form-error"></p><button class="btn btn-primary btn-lg" type="submit">Login</button></form>
+    <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:18px">Just exploring? <a href="find-route.html" style="font-weight:800;color:var(--navy)">Find a route without an account</a></p>
+  </section>
+</div>
+
+  <div id="site-footer"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

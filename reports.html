@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Road Reports — RAASTAGO</title>
+  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
+   <!-- <link rel="icon" href="assets/favicon.ico"> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body data-page="reports">
+  <div id="site-header"></div>
+  
+<div class="container">
+  <header class="page-head"><p class="eyebrow">Community reports</p><h1>Reported by commuters like you.</h1><p>Reports in the demonstration dataset. Confirm a report if you have seen the same problem.</p></header>
+  <div class="card filter-card">
+    <div class="fields">
+      <div class="field"><label>Search reports</label><input id="report-search" class="input" placeholder="Search road or area"></div>
+      <div class="field"><label>City</label><select id="report-city" class="select"><option value="all">All cities</option></select></div>
+    </div>
+    <div class="field" style="margin-top:14px"><label>Problem type</label><select id="report-type" class="select" style="max-width:400px"><option value="all">All types</option></select></div>
+    <div class="filters" id="status-filters"><button class="filter-btn selected" data-status="all">All statuses</button><button class="filter-btn" data-status="active">Active</button><button class="filter-btn" data-status="review">Under Review</button><button class="filter-btn" data-status="resolved">Resolved</button><button class="filter-btn" data-status="expired">Expired</button></div>
+  </div>
+  <p id="report-count" style="color:var(--muted);font-size:13px;margin-top:18px"></p>
+  <section class="reports-map-section card"><div class="section-head" style="margin:0 0 14px"><p class="eyebrow">Incident map</p><h2>Road problems across the dataset.</h2><p style="color:var(--muted);font-size:13px">Markers show demonstration community reports. Select a marker to see the reported problem.</p></div><div id="reports-map" class="map" style="height:430px"></div></section>
+  <div id="reports-grid" class="report-grid"></div>
+</div>
+
+  <div id="site-footer"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Traffic — RAASTAGO</title>
+  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
+    <!-- <link rel="icon" href="assets/favicon.ico"> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+</head>
+<body data-page="traffic">
+  <div id="site-header"></div>
+  
+<div class="container">
+  <header class="page-head"><p class="eyebrow">Live traffic</p><h1>Traffic across Pakistan, at a glance.</h1><p>Explore traffic corridors and community incidents. Current values are demonstration data until a live source is connected.</p></header>
+  <div class="traffic-overview">
+    <div class="stat-card"><small>Clear Roads</small><strong>67%</strong><div class="progress"><span style="width:67%"></span></div></div>
+    <div class="stat-card"><small>Moderate Traffic</small><strong>21%</strong><div class="progress"><span style="width:21%;background:var(--yellow)"></span></div></div>
+    <div class="stat-card"><small>Heavy Traffic</small><strong>12%</strong><div class="progress"><span style="width:12%;background:var(--red)"></span></div></div>
+    <div class="stat-card"><small>Active Reports</small><strong>128</strong><div style="color:var(--muted);font-size:12px;margin-top:9px">Across demonstration cities</div></div>
+  </div>
+  <div class="two-col" style="margin-top:28px">
+    <div><div id="traffic-map" class="map" style="height:560px"></div><div class="traffic-legend"><span class="traffic-badge clear"><i></i>Clear</span><span class="traffic-badge moderate"><i></i>Moderate</span><span class="traffic-badge heavy"><i></i>Heavy</span><span class="traffic-badge closed"><i></i>Closed</span></div></div>
+    <aside>
+      <div class="card filter-card"><h3>Filter incidents</h3><div id="traffic-filters" class="filters">
+        <button class="filter-btn selected" data-filter="all">All</button><button class="filter-btn" data-filter="heavy">Heavy</button><button class="filter-btn" data-filter="moderate">Moderate</button><button class="filter-btn" data-filter="clear">Clear</button><button class="filter-btn" data-filter="closed">Closed</button>
+      </div></div>
+      <div class="card" style="margin-top:16px"><h3>Corridor status</h3><ul id="corridors" class="corridors" style="margin-top:12px"></ul></div>
+      <a class="btn btn-danger" style="margin-top:16px;width:100%" href="report.html">⚠ Report Problem</a>
+    </aside>
+  </div>
+</div>
+
+  <div id="site-footer"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
