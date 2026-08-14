@@ -1,28 +1,116 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Road Safety Guide — RAASTAGO</title>
-  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
+
+  <meta
+    name="description"
+    content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan."
+  >
+
   <!-- <link rel="icon" href="assets/favicon.ico"> -->
+
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin=""
+  >
 </head>
+
 <body data-page="safety">
+
   <div id="site-header"></div>
-  
-<div class="container">
-  <header class="page-head"><p class="eyebrow">Safety guide</p><h1>Travel safer on Pakistani roads.</h1><p>Short, practical guidance for conditions that can cause serious incidents in our cities.</p></header>
-  <div id="safety-grid" class="safety-grid"></div>
-  <section class="dark-cta"><div><h2 style="margin:0;font-size:28px">Saw something dangerous on the road?</h2><p>A quick report can warn everyone travelling behind you.</p></div><a class="btn btn-primary btn-lg" href="report.html">Report Problem</a></section>
-</div>
+
+  <div class="container">
+
+    <!-- PAGE HEADER -->
+    <header class="page-head">
+
+      <p class="eyebrow">
+        Safety guide
+      </p>
+
+      <h1>
+        Travel safer on Pakistani roads.
+      </h1>
+
+      <p>
+        Short, practical guidance for conditions that can cause
+        serious incidents in our cities.
+      </p>
+
+    </header>
 
 
+    <!-- SAFETY CARDS -->
+    <div
+      id="safety-grid"
+      class="safety-grid"
+    ></div>
 
-  <div id="site-footer"></div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+    <!-- CTA -->
+    <section class="dark-cta">
+
+      <div>
+
+        <h2
+          style="
+            margin:0;
+            font-size:28px;
+          "
+        >
+          Saw something dangerous on the road?
+        </h2>
+
+        <p>
+          A quick report can warn everyone travelling behind you.
+        </p>
+
+      </div>
+
+      <a
+        class="btn btn-primary btn-lg"
+        href="report.html"
+      >
+        Report Problem
+      </a>
+
+    </section>
+
+  </div>
+
+
+  <!-- COPYRIGHT FOOTER -->
+  <footer class="site-footer">
+
+    <p>
+      Designed &amp; Developed by
+      <strong>Code_With.Umar</strong>
+      © 2026 All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- LEAFLET -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    crossorigin=""
+  ></script>
+
+  <!-- PROJECT DATA -->
   <script src="data.js"></script>
+
+  <!-- MAIN JAVASCRIPT -->
   <script src="main.js"></script>
+
 </body>
+
 </html>
