@@ -33,3 +33,6 @@ Community reports submitted from the report form are stored in browser `localSto
 
 ## Submission note
 This project is a frontend prototype. A future version can connect a backend, live traffic provider and production directions/geocoding APIs.
+
+## Copyright
+© 2026 Muhammad Umar & Syed Faaiz Bin Shan e Ali. All Rights Reserved.
