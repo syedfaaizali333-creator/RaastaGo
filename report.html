@@ -3,44 +3,457 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Report a Road Problem — RAASTAGO</title>
-  <meta name="description" content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan.">
-  <!-- <link rel="icon" href="assets/favicon.ico"> -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-</head>
-<body data-page="report">
-  <div id="site-header"></div>
-  
-<div class="container">
-  <div id="report-content" class="report-form-layout" style="padding-top:48px">
-    <section>
-      <p class="eyebrow">Community reporting</p><h1 style="font-size:42px;margin-top:7px">See a Problem? Report It.</h1>
-      <p style="color:var(--muted);font-size:14px;max-width:680px;margin-top:12px">Every report helps someone else avoid a blocked, flooded or dangerous road. Reports are reviewed before they are marked active.</p>
-      <form id="report-form" class="form-card surface-card" novalidate>
-        <div class="field"><label>Problem Type</label><select class="select" name="type"><option value="">Select a problem type</option></select></div>
-        <div class="fields" style="margin-top:18px">
-          <div class="field location-wrap"><label>Location</label><input class="input" name="location" placeholder="Enter location"><button class="btn btn-ghost btn-sm" type="button" data-use-location style="margin-top:6px">➤ Use My Location</button></div>
-          <div class="field"><label>City</label><select class="select" name="city"></select></div>
-        </div>
-        <div class="field" style="margin-top:18px"><label>Description</label><textarea class="textarea" name="description" maxlength="500" placeholder="Describe what is happening..."></textarea><div style="display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:5px"><span class="form-error"></span><span class="char-count">0/500</span></div></div>
-        <div class="field" style="margin-top:12px"><label>Upload Photo (optional)</label><label class="upload"><span class="file-name">Click to add a photo (PNG, JPG or WEBP, max 5 MB)</span><input name="photo" type="file" accept="image/png,image/jpeg,image/webp"></label></div>
-        <p class="form-error" style="margin-top:12px"></p>
-        <button class="btn btn-danger btn-lg" type="submit" style="margin-top:10px">⚠ Submit Report</button>
-      </form>
-    </section>
-    <aside class="side-stack">
-      <section class="card"><h2>Pin the problem location</h2><p style="color:var(--muted);font-size:13px">Use the map to choose the location, or enter it manually in the form.</p><div id="report-map" class="map" style="height:330px;margin-top:14px"></div><div class="traffic-legend"><span class="traffic-badge clear"><i></i>Clear</span><span class="traffic-badge moderate"><i></i>Moderate</span><span class="traffic-badge heavy"><i></i>Heavy</span><span class="traffic-badge closed"><i></i>Closed</span></div></section>
-      <section class="card"><h2>What happens next</h2><ol><li>Your report is marked Under Review.</li><li>Nearby users confirm or dispute it.</li><li>Confirmed reports become Active on the traffic map.</li><li>Reports expire automatically once conditions clear.</li></ol></section>
-      <section class="card"><h2>Report statuses</h2><ul class="status-list"><li><i class="status-dot" style="background:var(--green)"></i><div><b>Active</b><div style="color:var(--muted);font-size:12px">Currently affecting traffic.</div></div></li><li><i class="status-dot" style="background:var(--yellow)"></i><div><b>Under Review</b><div style="color:var(--muted);font-size:12px">Waiting for verification.</div></div></li><li><i class="status-dot" style="background:var(--green)"></i><div><b>Resolved</b><div style="color:var(--muted);font-size:12px">No longer active.</div></div></li><li><i class="status-dot" style="background:var(--closed)"></i><div><b>Expired</b><div style="color:var(--muted);font-size:12px">Old report.</div></div></li></ul></section>
-    </aside>
-  </div>
-  <div id="report-success" class="success" hidden style="margin-top:50px"><div class="success-icon">✓</div><h1 style="font-size:32px;margin-top:18px">Your report has been submitted successfully.</h1><p style="color:var(--muted)">Thank you for helping other travelers make better decisions.</p><div class="form-actions" style="justify-content:center"><a class="btn btn-primary" href="reports.html">View Community Reports</a><a class="btn btn-outline" href="report.html">Report another problem</a></div></div>
-</div>
 
-  <div id="site-footer"></div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <script src="data.js"></script>
+  <title>Report a Road Problem — RAASTAGO</title>
+
+  <meta
+    name="description"
+    content="RAASTAGO provides complete road information, traffic conditions, route recommendations and community road reports for Pakistan."
+  >
+
+  <!-- <link rel="icon" href="assets/favicon.ico"> -->
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin=""
+  >
+</head>
+
+<body data-page="report">
+
+  <div id="site-header"></div>
+
+  <div class="container">
+
+    <div
+      id="report-content"
+      class="report-form-layout"
+      style="padding-top:48px"
+    >
+
+      <!-- LEFT SIDE -->
+      <section>
+
+        <p class="eyebrow">Community reporting</p>
+
+        <h1 style="font-size:42px;margin-top:7px">
+          See a Problem? Report It.
+        </h1>
+
+        <p
+          style="
+            color:var(--muted);
+            font-size:14px;
+            max-width:680px;
+            margin-top:12px;
+          "
+        >
+          Every report helps someone else avoid a blocked, flooded or
+          dangerous road. Reports are reviewed before they are marked active.
+        </p>
+
+        <form
+          id="report-form"
+          class="form-card surface-card"
+          novalidate
+        >
+
+          <!-- Problem Type -->
+          <div class="field">
+
+            <label>Problem Type</label>
+
+            <select class="select" name="type">
+              <option value="">
+                Select a problem type
+              </option>
+            </select>
+
+          </div>
+
+          <!-- Location + City -->
+          <div
+            class="fields"
+            style="margin-top:18px"
+          >
+
+            <div class="field location-wrap">
+
+              <label>Location</label>
+
+              <input
+                class="input"
+                name="location"
+                placeholder="Enter location"
+              >
+
+              <button
+                class="btn btn-ghost btn-sm"
+                type="button"
+                data-use-location
+                style="margin-top:6px"
+              >
+                ➤ Use My Location
+              </button>
+
+            </div>
+
+            <div class="field">
+
+              <label>City</label>
+
+              <select
+                class="select"
+                name="city"
+              ></select>
+
+            </div>
+
+          </div>
+
+          <!-- Description -->
+          <div
+            class="field"
+            style="margin-top:18px"
+          >
+
+            <label>Description</label>
+
+            <textarea
+              class="textarea"
+              name="description"
+              maxlength="500"
+              placeholder="Describe what is happening..."
+            ></textarea>
+
+            <div
+              style="
+                display:flex;
+                justify-content:space-between;
+                color:var(--muted);
+                font-size:11px;
+                margin-top:5px;
+              "
+            >
+
+              <span class="form-error"></span>
+
+              <span class="char-count">
+                0/500
+              </span>
+
+            </div>
+
+          </div>
+
+          <!-- Photo Upload -->
+          <div
+            class="field"
+            style="margin-top:12px"
+          >
+
+            <label>Upload Photo (optional)</label>
+
+            <label class="upload">
+
+              <span class="file-name">
+                Click to add a photo
+                (PNG, JPG or WEBP, max 5 MB)
+              </span>
+
+              <input
+                name="photo"
+                type="file"
+                accept="image/png,image/jpeg,image/webp"
+              >
+
+            </label>
+
+          </div>
+
+          <p
+            class="form-error"
+            style="margin-top:12px"
+          ></p>
+
+          <!-- Submit -->
+          <button
+            class="btn btn-danger btn-lg"
+            type="submit"
+            style="margin-top:10px"
+          >
+            ⚠ Submit Report
+          </button>
+
+        </form>
+
+      </section>
+
+
+      <!-- RIGHT SIDE -->
+      <aside class="side-stack">
+
+        <!-- Map -->
+        <section class="card">
+
+          <h2>Pin the problem location</h2>
+
+          <p
+            style="
+              color:var(--muted);
+              font-size:13px;
+            "
+          >
+            Use the map to choose the location, or enter it manually
+            in the form.
+          </p>
+
+          <div
+            id="report-map"
+            class="map"
+            style="height:330px;margin-top:14px"
+          ></div>
+
+          <div class="traffic-legend">
+
+            <span class="traffic-badge clear">
+              <i></i>Clear
+            </span>
+
+            <span class="traffic-badge moderate">
+              <i></i>Moderate
+            </span>
+
+            <span class="traffic-badge heavy">
+              <i></i>Heavy
+            </span>
+
+            <span class="traffic-badge closed">
+              <i></i>Closed
+            </span>
+
+          </div>
+
+        </section>
+
+
+        <!-- What happens next -->
+        <section class="card">
+
+          <h2>What happens next</h2>
+
+          <ol>
+
+            <li>
+              Your report is marked Under Review.
+            </li>
+
+            <li>
+              Nearby users confirm or dispute it.
+            </li>
+
+            <li>
+              Confirmed reports become Active on the traffic map.
+            </li>
+
+            <li>
+              Reports expire automatically once conditions clear.
+            </li>
+
+          </ol>
+
+        </section>
+
+
+        <!-- Report statuses -->
+        <section class="card">
+
+          <h2>Report statuses</h2>
+
+          <ul class="status-list">
+
+            <li>
+
+              <i
+                class="status-dot"
+                style="background:var(--green)"
+              ></i>
+
+              <div>
+                <b>Active</b>
+
+                <div
+                  style="
+                    color:var(--muted);
+                    font-size:12px;
+                  "
+                >
+                  Currently affecting traffic.
+                </div>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <i
+                class="status-dot"
+                style="background:var(--yellow)"
+              ></i>
+
+              <div>
+
+                <b>Under Review</b>
+
+                <div
+                  style="
+                    color:var(--muted);
+                    font-size:12px;
+                  "
+                >
+                  Waiting for verification.
+                </div>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <i
+                class="status-dot"
+                style="background:var(--green)"
+              ></i>
+
+              <div>
+
+                <b>Resolved</b>
+
+                <div
+                  style="
+                    color:var(--muted);
+                    font-size:12px;
+                  "
+                >
+                  No longer active.
+                </div>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <i
+                class="status-dot"
+                style="background:var(--closed)"
+              ></i>
+
+              <div>
+
+                <b>Expired</b>
+
+                <div
+                  style="
+                    color:var(--muted);
+                    font-size:12px;
+                  "
+                >
+                  Old report.
+                </div>
+
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </aside>
+
+    </div>
+
+
+    <!-- SUCCESS MESSAGE -->
+    <div
+      id="report-success"
+      class="success"
+      hidden
+      style="margin-top:50px"
+    >
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <h1
+        style="
+          font-size:32px;
+          margin-top:18px;
+        "
+      >
+        Your report has been submitted successfully.
+      </h1>
+
+      <p style="color:var(--muted)">
+        Thank you for helping other travelers make better decisions.
+      </p>
+
+      <div
+        class="form-actions"
+        style="justify-content:center"
+      >
+
+        <a
+          class="btn btn-primary"
+          href="reports.html"
+        >
+          View Community Reports
+        </a>
+
+        <a
+          class="btn btn-outline"
+          href="report.html"
+        >
+          Report another problem
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- COPYRIGHT FOOTER -->
+  <footer class="site-footer">
+
+    <p>
+      Designed &amp; Developed by
+      <strong>Code_With.Umar</strong>
+      © 2026 All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- Scripts -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    crossorigin=""
+  ></script>
+
+  <script src="data.js"></script>
+
   <script src="main.js"></script>
+
 </body>
 </html>
